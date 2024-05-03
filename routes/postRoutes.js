@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { Posts } = require("../models");
+const { Op } = require("sequelize");
 const upload = require("../config/multerConfig");
 
 const commonImageTags = [
@@ -25,8 +26,8 @@ const getPosts = async (req, res) => {
       const keyword = req.query.keyword;
       options.where = {
         [Op.or]: [
-          { title: { [Op.like]: `%${keyword}%` } },
-          { description: { [Op.like]: `%${keyword}%` } },
+          { title: { [Op.iLike]: `%${keyword}%` } },
+          { description: { [Op.iLike]: `%${keyword}%` } },
         ],
       };
     }
