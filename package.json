@@ -6,6 +6,9 @@
   "scripts": {
     "start": "nodemon server.js"
   },
+  "engines": {
+    "node": "v20.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/srikanth-kandi/wellnessz-backend.git"
