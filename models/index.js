@@ -8,12 +8,12 @@ const sequelize = new Sequelize({
     password: process.env.DB_PASS,
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
-    /*dialectOptions: {
+    dialectOptions: {
         ssl: {
             rejectUnauthorized: true,
             ca: process.env.DB_CERT
         }
-    }*/
+    }
 });
 
 const Posts = sequelize.define('posts', {
